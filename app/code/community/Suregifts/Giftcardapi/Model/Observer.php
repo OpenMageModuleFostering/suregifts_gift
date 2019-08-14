@@ -106,7 +106,7 @@ exit;
 	public function insertBlock($observer){
 		$_block=$observer->getBlock();
 		$_type=$_block->getType();
-		echo $_type;
+	//	echo $_type;
 		if($_type=='checkout/cart_crosssell'){
 				$_child= clone $_block;
 				$_child->setType('checkout/cart_coupon');
