@@ -26,7 +26,7 @@ giftcardDiscountForm.submit = function (isRemove) {
 	$('giftcard').removeClassName('required-entry');
         $('remove-discount').value = "1";
     } else {
-	$('giftcard').addClassName('required-entry');
+//	$('giftcard').addClassName('required-entry');
         $('remove-discount').value = "0";
     }
     return VarienForm.prototype.submit.bind(giftcardDiscountForm)();
