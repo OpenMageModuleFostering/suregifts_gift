@@ -53,7 +53,8 @@ class Suregifts_Giftcardapi_IndexController extends Mage_Core_Controller_Front_A
 		$country=$array_config['suregifts_country'];
        		$auth = $username.':'.$password;
      $validationUrl =Mage::getModel('giftcardapi/giftcardapi')->getValidationUrl($country,$mode);
-
+var_dump($validationUrl);
+die($validationUrl);
                 
 
 	//just added this Feb 12 2016

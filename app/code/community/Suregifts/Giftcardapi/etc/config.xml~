@@ -66,7 +66,6 @@
     <giftcardapi>
         <suregifts_group>                
             <suregifts_mode>0</suregifts_mode>      
-	    <suregifts_country>NGR</suregifts_country>      
         </suregifts_group>      
     </giftcardapi>
 </default>

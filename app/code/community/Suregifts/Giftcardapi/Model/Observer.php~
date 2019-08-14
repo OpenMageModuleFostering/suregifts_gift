@@ -36,7 +36,9 @@ class Suregifts_Giftcardapi_Model_Observer {
 
 	//just added this Feb 12 2016
 
-	$ch = curl_init($confirmationUrl);
+	$ch = curl_init($confirmationUrl.'?vouchercode='.$data['giftcard']);
+
+
 			 
 			  $data = array( 
           "AmountToUse" => $order->getBaseGiftcardapiDiscount() , 
@@ -46,8 +48,13 @@ class Suregifts_Giftcardapi_Model_Observer {
           );  
 		  
 		  $data_string = json_encode($data);
-	
-		$header= array();
+
+		  
+
+       		
+  	
+
+			$header= array();
 		    $header[0]= 'Content-Type: application/json';
 			$header[1]='Content-Length: ' . strlen($data_string);
 			
