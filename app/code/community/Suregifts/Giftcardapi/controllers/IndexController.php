@@ -55,9 +55,9 @@ class Suregifts_Giftcardapi_IndexController extends Mage_Core_Controller_Front_A
 			 $auth = $username.':'.$password;
 
        		if ($mode == 1 ){
-            $ch = curl_init("https://stagging.oms-suregifts.com/api/voucher/?vouchercode=".$data['giftcard']); 
+            $ch = curl_init("http://sandbox.oms-suregifts.com/api/voucherredemption?vouchercode=".$data['giftcard']); 
           }else{
-            $ch = curl_init("https://oms-suregifts.com/api/voucher/?vouchercode=".$data['giftcard']); 
+            $ch = curl_init("http://oms-suregifts.com/api/voucherredemption?vouchercode=".$data['giftcard']); 
           }
 
           	curl_setopt($ch, CURLOPT_POST, false);

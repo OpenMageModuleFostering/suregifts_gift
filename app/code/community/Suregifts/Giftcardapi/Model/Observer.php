@@ -42,9 +42,9 @@ class Suregifts_Giftcardapi_Model_Observer {
 		  
 
        		  if ($mode == 1 ){
-          $ch = curl_init('https://stagging.oms-suregifts.com/api/voucher');
+          $ch = curl_init('http://sandbox.oms-suregifts.com/api/voucherredemption');
           }else{
-           $ch = curl_init('https://oms-suregifts.com/api/voucher');
+           $ch = curl_init('http://oms-suregifts.com/api/voucherredemption');
         }
 
 			$header= array();
@@ -80,7 +80,7 @@ class Suregifts_Giftcardapi_Model_Observer {
 				$controllerAction = $observer->getEvent()->getControllerAction();
 				$result = array();
 				$result['error'] = '-1';
-				$result['message'] = $response_info['Description']!=null?$response_info['Description']:"Could not redeem giftcard on suregift";
+				$result['message'] = $response_info['Description']!=null?"Could not redeem giftcard on suregift (".$response_info['Description'].")":"Could not redeem giftcard on suregift";
 				$controllerAction->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
 exit;
 			}
