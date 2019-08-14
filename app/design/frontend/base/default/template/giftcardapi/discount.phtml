@@ -1,0 +1,36 @@
+
+<form method="post" action="<?php echo $this->getUrl('giftcardapi/index/discountPost') ?>" id="giftcard-discount-form">
+	 <input type="hidden" name="remove" id="remove-discount" value="0" />
+    
+    <div class="discount">
+        <h2><?php echo $this->__('SureGifts Card')?></h2>
+        <div class="discount-form">
+			<label for="giftcard"><?php echo $this->__('<a href="http://suregifts.com.ng" target="_blank">SureGifts</a> card code')?></label>
+            <div class="input-box">
+                <input value="" name="giftcard" id="giftcard" class="input-text">
+            </div>
+            <div class="buttons-set">
+                <button value="<?php echo $this->__('Update Order')?>" onclick="giftcardDiscountForm.submit(false)" class="button" title="<?php echo $this->__('Update Order')?>" type="button"><span><span><?php echo $this->__('Update Order')?></span></span></button>
+				<?php if(Mage::getSingleton('checkout/session')->getUseGiftcardapiDiscount()):?>
+                    &nbsp; <button type="button" title="<?php echo $this->__('Cancel Gift Discount') ?>" class="button" onclick="giftcardDiscountForm.submit(true)" value="<?php echo $this->__('Cancel Discount') ?>"><span><span><?php echo $this->__('Cancel Discount') ?></span></span></button>
+                <?php endif;?>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+var giftcardDiscountForm = new VarienForm('giftcard-discount-form');
+giftcardDiscountForm.submit = function (isRemove) {
+	if (isRemove) {
+	$('giftcard').removeClassName('required-entry');
+        $('remove-discount').value = "1";
+    } else {
+	$('giftcard').addClassName('required-entry');
+        $('remove-discount').value = "0";
+    }
+    return VarienForm.prototype.submit.bind(giftcardDiscountForm)();
+}
+//]]>
+</script>
+<?php  echo $this->getChildHtml('child');

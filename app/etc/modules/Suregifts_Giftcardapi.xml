@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Suregifts_Giftcardapi>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Suregifts_Giftcardapi>
+    </modules>
+</config>

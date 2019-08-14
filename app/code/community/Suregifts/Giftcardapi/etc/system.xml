@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <suregifts_tab module="giftcardapi" translate="label">
+            <label>Suregifts Checkout</label>
+            <sort_order>100</sort_order>
+        </suregifts_tab>
+    	</tabs>
+    	<sections>
+        <giftcardapi module="giftcardapi" translate="label">
+            <label>Options</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>suregifts_tab</tab>
+            <groups>
+                <suregifts_group translate="label">
+                    <label>Suregifts GiftCard Configuration</label>
+                    <comment>Enter the merchant username and password provided to you by SUREGIFTS</comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <suregifts_username translate="label">
+                            <label>Username: </label>
+                            <comment>Enter the merchant username</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </suregifts_username>
+                        <suregifts_password translate="label">
+                            <label>Password: </label>
+                            <comment>Enter the merchant password</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </suregifts_password>
+                        <suregifts_websitehost translate="label">
+                            <label>Website Host: </label>
+                            <comment>Enter website host for authentication</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </suregifts_websitehost>
+                        <suregifts_mode translate="label">
+                            <label>Test Mode </label>
+                            <comment>select 'No' to authenticate with live server</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </suregifts_mode>                    
+                    </fields>
+                </suregifts_group>
+            </groups>
+        </giftcardapi>
+    </sections>
+<sections>
+       	<sales>
+            <groups>
+                <totals_sort>
+                    <fields>
+                        <giftcardapi module="giftcardapi" translate="label">
+                            <label>Giftcardapi Discount</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </giftcardapi>
+                    </fields>
+                </totals_sort>
+            </groups>
+        </sales>
+		<tax translate="label" module="tax">
+            <groups>
+                <classes translate="label">
+                    <fields>
+                        <giftcardapi_tax_class translate="label">
+                            <label>Giftcardapi Tax Class</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_shipping_taxclass</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </giftcardapi_tax_class>
+                    </fields>
+                </classes>
+                <calculation translate="label">
+                    <fields>
+                        <giftcardapi_includes_tax translate="label comment">
+                            <label>Giftcardapi Discount</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>tax/system_config_source_priceType</source_model>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </giftcardapi_includes_tax>
+                    </fields>
+                </calculation>
+            </groups>
+        </tax>
+    </sections>
+</config>
