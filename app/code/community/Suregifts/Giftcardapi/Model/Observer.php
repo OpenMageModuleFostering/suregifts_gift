@@ -107,11 +107,13 @@ exit;
 		$_block=$observer->getBlock();
 		$_type=$_block->getType();
 	//	echo $_type;
-		if($_type=='checkout/cart_crosssell'){
+		if($_type=='checkout/cart_coupon'){
+			    // var_dump($_block);
 				$_child= clone $_block;
-				$_child->setType('checkout/cart_coupon');
+				$_child->setType('giftcardapi/discount');
 				$_block->setChild('child',$_child);
 				$_block->setTemplate('giftcardapi/discount.phtml');
+			
 			
 			}
 		
