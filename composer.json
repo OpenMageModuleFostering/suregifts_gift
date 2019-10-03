@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Suregifts_gift",
+    "name": "OpenMageModuleFostering\/Suregifts_gift",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "Suregifts giftcardapi",
     "authors": [
-    {
-        "name": "Sodiq Fagbola",
-        "email": "realdammy@hotmail.com"
-    }
-],
+        {
+            "name": "Sodiq Fagbola",
+            "email": "realdammy@hotmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
